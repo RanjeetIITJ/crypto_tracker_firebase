@@ -31,7 +31,7 @@ const CoinPage = () => {
             },
         },
         sidebar:{
-            width:"30%",
+            width:"35%",
             [theme.breakpoints.down("md")]:{
                 width:"100%",
             },
