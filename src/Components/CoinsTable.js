@@ -12,8 +12,6 @@ import {createTheme,
     TableCell,
     TableBody
 } from "@material-ui/core"
-import { CoinList } from '../config/api';
-import axios from "axios";
 import { CryptoState } from '../CryptoContext';
 import { makeStyles } from '@material-ui/styles';
 import { useHistory } from 'react-router-dom';
@@ -22,18 +20,11 @@ export function numberWithCommas(x){
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g,",");
 }
 const CoinsTable = () => {
-    const [coins, setCoins] = useState([]);
-    const [loading, setLoading] = useState(false);
     const [search, setSearch] = useState("")
     const [page, setPage] = useState(1)
     const history=useHistory();
-    const {currency,symbol}=CryptoState();
-    const fetchCoins=async()=>{
-        setLoading(true)
-        const {data}=await axios.get(CoinList(currency)) ;
-        setCoins(data);
-        setLoading(false);
-    };
+    const {currency,symbol,coins,loading,fetchCoins}=CryptoState();
+    
     // console.log(coins);
     useEffect(()=>{
         fetchCoins()
