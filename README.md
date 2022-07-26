@@ -1,0 +1,2 @@
+# crypto_tracker_firebase
+This web app is built with the help of React.js, Material UI and Firebase is used for the authentication. User can see the prices of all the trending crypto coins . It's market price, the change in it's price in the last 1 day, 1 month ,3 month and in 1 year with the help of a graph which is implemented using chart.js . A user can log in , and sign up both using an email id or directly through google. They can add or remove any coin into the watchlist. The authentication and database is implemented by firebase.
